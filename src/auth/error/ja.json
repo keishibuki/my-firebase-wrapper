@@ -1,0 +1,8 @@
+{
+  "auth/invalid-email": "メールアドレスの形式が正しくありません。",
+  "auth/user-disabled": "該当ユーザーは無効状態です。管理者に連絡してください。",
+  "auth/user-not-found": "ユーザーが見つかりません。もしくはこのユーザーは削除されています。",
+  "auth/wrong-password": "パスワードが間違っているか、パスワードが設定されていません。",
+  "auth/email-already-in-use": "このメールアドレスはすでに別のアカウントとして登録されています。",
+  "auth/weak-password": "パスワードは最低6文字必要です。"
+}
