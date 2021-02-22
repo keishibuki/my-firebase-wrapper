@@ -11,7 +11,6 @@
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
-    "firebase": "^8.2.9",
     "firebase-tools": "^9.4.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
@@ -26,6 +25,7 @@
     "test": "FIRESTORE_EMULATOR_HOST=localhost:58080 npx jest"
   },
   "dependencies": {
+    "firebase": "^8.2.9",
     "uuid": "^8.3.2"
   }
 }
