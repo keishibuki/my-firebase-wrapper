@@ -242,8 +242,8 @@
         "affectsGlobalScope": false
       },
       "../src/auth/error/ja.json": {
-        "version": "3a98599fa478501c4c3df1216dea5b8bb18501bf617a921e987f1f773b36ac66",
-        "signature": "10c5aebd7b1a7a367ee09a4420ff824e509b2ac1f0afca8fee99259dddbaab1a",
+        "version": "a0abb95acdecbc1e8eeb1e7b6c91dfee75b5a1146cf691181de2ec993fd79d4d",
+        "signature": "5fd3ba87b616bba846cf2fad9577aa81dc846ba8809e2d26c29f31dd924fa979",
         "affectsGlobalScope": true
       },
       "../src/auth/index.ts": {
