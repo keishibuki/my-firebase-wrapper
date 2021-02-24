@@ -11,7 +11,7 @@ export class FirebaseAuthWrapper {
     this.auth = auth;
   }
 
-  signInWithEmailAndPassword(email: string, password: string) {
+  signInWithEmailAndPassword(email: string, password: string): Promise<firebase.auth.UserCredential | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this.auth
         .signInWithEmailAndPassword(email, password)
@@ -28,7 +28,7 @@ export class FirebaseAuthWrapper {
     });
   }
 
-  createUserWithEmailAndPassword(email: string, password: string) {
+  createUserWithEmailAndPassword(email: string, password: string): Promise<firebase.auth.UserCredential | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this
         .auth
