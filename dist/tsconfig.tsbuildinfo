@@ -241,19 +241,14 @@
         "signature": "348fb9acae3bc3d6de2fc0d5b8eb783b1b03ee83371a757be89c35554b9b06e4",
         "affectsGlobalScope": false
       },
-      "../node_modules/@firebase/rules-unit-testing/dist/src/api/index.d.ts": {
-        "version": "13e491e003aaf5fcc4a35f076f1087256a2f822848f91efea88f757023338b6a",
-        "signature": "13e491e003aaf5fcc4a35f076f1087256a2f822848f91efea88f757023338b6a",
-        "affectsGlobalScope": false
+      "../src/auth/error/ja.json": {
+        "version": "3a98599fa478501c4c3df1216dea5b8bb18501bf617a921e987f1f773b36ac66",
+        "signature": "10c5aebd7b1a7a367ee09a4420ff824e509b2ac1f0afca8fee99259dddbaab1a",
+        "affectsGlobalScope": true
       },
-      "../node_modules/@firebase/rules-unit-testing/dist/index.d.ts": {
-        "version": "9c20b2fb4499e8503d1f8f32032adef7540bfc1f0ed06e358c50a2500e2c2fca",
-        "signature": "9c20b2fb4499e8503d1f8f32032adef7540bfc1f0ed06e358c50a2500e2c2fca",
-        "affectsGlobalScope": false
-      },
-      "../src/__test__/util.ts": {
-        "version": "dc950017328885917ff788220534fd442315307e60afd99cff63a24f058e2f88",
-        "signature": "c23338f19416dc3ec776d101027ee11f634f962788720bc471fbd22390e3652e",
+      "../src/auth/index.ts": {
+        "version": "9fa6019476c9b00abf585a93d49a4137321f1b7cd9a5dd055a4f2bc96f89c062",
+        "signature": "c930ab530d96625479fd7fbe27f5b1dd24b668b603d143e11d89a28d1e7b1b0e",
         "affectsGlobalScope": false
       },
       "../node_modules/utility-types/dist/aliases-and-guards.d.ts": {
@@ -311,19 +306,29 @@
         "signature": "0d0229d88e0d8d68397b991a05e81dd60cd66052d61d01f9fad643d2d2af63b3",
         "affectsGlobalScope": false
       },
+      "../src/index.tsx": {
+        "version": "151b305db53b6f2819e9205bfd852865a9fcdf6062307458f7d74bdb8d208a07",
+        "signature": "bee7e77dbab4c6c5d3c05e602cc25dcfffc2d884c13541a37ad5e0d2694b5959",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@firebase/rules-unit-testing/dist/src/api/index.d.ts": {
+        "version": "13e491e003aaf5fcc4a35f076f1087256a2f822848f91efea88f757023338b6a",
+        "signature": "13e491e003aaf5fcc4a35f076f1087256a2f822848f91efea88f757023338b6a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@firebase/rules-unit-testing/dist/index.d.ts": {
+        "version": "9c20b2fb4499e8503d1f8f32032adef7540bfc1f0ed06e358c50a2500e2c2fca",
+        "signature": "9c20b2fb4499e8503d1f8f32032adef7540bfc1f0ed06e358c50a2500e2c2fca",
+        "affectsGlobalScope": false
+      },
+      "../src/__test__/util.ts": {
+        "version": "dc950017328885917ff788220534fd442315307e60afd99cff63a24f058e2f88",
+        "signature": "c23338f19416dc3ec776d101027ee11f634f962788720bc471fbd22390e3652e",
+        "affectsGlobalScope": false
+      },
       "../src/__test__/basic.test.ts": {
         "version": "ac5e9808bcf49e4478388e288eb22b6d7b4937d57a926aafd751e6e18d2a8c63",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/auth/error/ja.json": {
-        "version": "3a98599fa478501c4c3df1216dea5b8bb18501bf617a921e987f1f773b36ac66",
-        "signature": "10c5aebd7b1a7a367ee09a4420ff824e509b2ac1f0afca8fee99259dddbaab1a",
-        "affectsGlobalScope": true
-      },
-      "../src/auth/index.ts": {
-        "version": "9fa6019476c9b00abf585a93d49a4137321f1b7cd9a5dd055a4f2bc96f89c062",
-        "signature": "c930ab530d96625479fd7fbe27f5b1dd24b668b603d143e11d89a28d1e7b1b0e",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/node/globals.d.ts": {
@@ -1083,6 +1088,10 @@
       "../src/firestore/types.ts": [
         "../node_modules/firebase/index.d.ts",
         "../node_modules/utility-types/dist/index.d.ts"
+      ],
+      "../src/index.tsx": [
+        "../src/auth/index.ts",
+        "../src/firestore/index.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1432,6 +1441,10 @@
       "../src/firestore/types.ts": [
         "../node_modules/firebase/index.d.ts",
         "../node_modules/utility-types/dist/index.d.ts"
+      ],
+      "../src/index.tsx": [
+        "../src/auth/index.ts",
+        "../src/firestore/index.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -1575,7 +1588,8 @@
       "../src/firestore/converter.ts",
       "../src/firestore/index.ts",
       "../src/firestore/query.ts",
-      "../src/firestore/types.ts"
+      "../src/firestore/types.ts",
+      "../src/index.tsx"
     ]
   },
   "version": "4.1.5"
