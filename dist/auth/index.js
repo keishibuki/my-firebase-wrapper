@@ -25,6 +25,19 @@ var FirebaseAuthWrapper = /** @class */ (function () {
             });
         });
     };
+    FirebaseAuthWrapper.prototype.sendPasswordResetEmail = function (email) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.auth
+                .sendPasswordResetEmail(email)
+                .then(function () {
+                resolve(email);
+            })
+                .catch(function (error) {
+                reject(_this.translateErrorMessage(error));
+            });
+        });
+    };
     FirebaseAuthWrapper.prototype.createUserWithEmailAndPassword = function (email, password) {
         var _this = this;
         return new Promise(function (resolve, reject) {
