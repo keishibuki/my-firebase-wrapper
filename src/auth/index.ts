@@ -28,7 +28,7 @@ export class FirebaseAuthWrapper {
     });
   }
 
-  sendPasswordResetEmail(email: string) {
+  sendPasswordResetEmail(email: string): Promise<string | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this.auth
         .sendPasswordResetEmail(email)
