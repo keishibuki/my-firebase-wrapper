@@ -25,6 +25,19 @@ var FirebaseAuthWrapper = /** @class */ (function () {
             });
         });
     };
+    FirebaseAuthWrapper.prototype.signOut = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.auth
+                .signOut()
+                .then(function () {
+                resolve('ログアウトに成功しました');
+            })
+                .catch(function (error) {
+                reject(_this.translateErrorMessage(error));
+            });
+        });
+    };
     FirebaseAuthWrapper.prototype.sendPasswordResetEmail = function (email) {
         var _this = this;
         return new Promise(function (resolve, reject) {

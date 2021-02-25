@@ -28,6 +28,19 @@ export class FirebaseAuthWrapper {
     });
   }
 
+  signOut() {
+    return new Promise((resolve, reject) => {
+      this.auth
+        .signOut()
+        .then(()=> {
+          resolve('ログアウトに成功しました');
+        })
+        .catch((error: FirebaseAuthError) => {
+          reject(this.translateErrorMessage(error));
+        });
+    });
+  }
+
   sendPasswordResetEmail(email: string): Promise<string | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this.auth
