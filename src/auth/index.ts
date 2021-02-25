@@ -59,9 +59,13 @@ export class FirebaseAuthWrapper {
     });
   }
 
-  onAuthStateChanged(callback: (user: firebase.User | null) => void) {
-    return this.auth.onAuthStateChanged((user: firebase.User | null) => {
-      callback(user);
+  onAuthStateChanged(): Promise<firebase.User | null> {
+   return new Promise((resolve, reject) => {
+      this.auth.onAuthStateChanged((user) => {
+        if (!user) reject(user);
+
+        resolve(user);
+      })
     });
   }
 

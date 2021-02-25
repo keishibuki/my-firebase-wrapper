@@ -55,9 +55,14 @@ var FirebaseAuthWrapper = /** @class */ (function () {
             });
         });
     };
-    FirebaseAuthWrapper.prototype.onAuthStateChanged = function (callback) {
-        return this.auth.onAuthStateChanged(function (user) {
-            callback(user);
+    FirebaseAuthWrapper.prototype.onAuthStateChanged = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.auth.onAuthStateChanged(function (user) {
+                if (!user)
+                    reject(user);
+                resolve(user);
+            });
         });
     };
     FirebaseAuthWrapper.prototype.translateErrorMessage = function (error) {
