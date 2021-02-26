@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FirebaseAuthWrapper = void 0;
+var firebase_1 = __importDefault(require("firebase"));
 var ja_json_1 = __importDefault(require("./error/ja.json"));
 var FirebaseAuthWrapper = /** @class */ (function () {
     function FirebaseAuthWrapper(auth) {
@@ -48,6 +49,24 @@ var FirebaseAuthWrapper = /** @class */ (function () {
             })
                 .catch(function (error) {
                 reject(_this.translateErrorMessage(error));
+            });
+        });
+    };
+    FirebaseAuthWrapper.prototype.reauthenticateWithCredential = function (currentPassword) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var currentUser = _this.auth.currentUser;
+            if (!currentUser) {
+                reject(undefined);
+                return;
+            }
+            var credential = firebase_1.default.auth.EmailAuthProvider.credential((currentUser === null || currentUser === void 0 ? void 0 : currentUser.email) || '', currentPassword);
+            currentUser
+                .reauthenticateWithCredential(credential)
+                .then(function () { return resolve(currentUser.uid); })
+                .catch(function (error) {
+                console.error(error);
+                reject(undefined);
             });
         });
     };

@@ -54,6 +54,26 @@ export class FirebaseAuthWrapper {
     });
   }
 
+  reauthenticateWithCredential(currentPassword: string): Promise<string | undefined> {
+    return new Promise((resolve, reject) => {
+      const { currentUser } = this.auth;
+
+      if (!currentUser) {
+        reject(undefined);
+        return;
+      }
+
+      const credential = firebase.auth.EmailAuthProvider.credential(currentUser?.email || '', currentPassword)
+      currentUser
+        .reauthenticateWithCredential(credential)
+        .then(() => resolve(currentUser.uid))
+        .catch((error) => {
+          console.error(error)
+          reject(undefined);
+        });
+    });
+  }
+
   createUserWithEmailAndPassword(email: string, password: string): Promise<firebase.auth.UserCredential | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this
