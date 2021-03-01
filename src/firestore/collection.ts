@@ -6,9 +6,9 @@ import { Query } from "./query";
 
 export class Collection<ObjectValue extends ObjectUid> {
   public db: firebase.firestore.Firestore;
+  public query: Query<ObjectValue>;
   public collectionRef: firebase.firestore.CollectionReference;
   private converter: Converter<ObjectValue>;
-  private query: Query<ObjectValue>;
 
   constructor(
     db: firebase.firestore.Firestore,

@@ -3,9 +3,9 @@ import { AddableObject, Decode, Encode, ObjectUid, QueryKey } from "./types";
 import { Query } from "./query";
 export declare class Collection<ObjectValue extends ObjectUid> {
     db: firebase.firestore.Firestore;
+    query: Query<ObjectValue>;
     collectionRef: firebase.firestore.CollectionReference;
     private converter;
-    private query;
     constructor(db: firebase.firestore.Firestore, collectionPath: string, encode?: Encode<ObjectValue>, decode?: Decode<ObjectValue>);
     doc(id?: string): firebase.firestore.DocumentReference;
     fetch(id: string): Promise<ObjectValue | undefined>;
