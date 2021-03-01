@@ -90,13 +90,27 @@ var FirebaseAuthWrapper = /** @class */ (function () {
             });
         });
     };
-    FirebaseAuthWrapper.prototype.updatePassword = function (password) {
+    FirebaseAuthWrapper.prototype.updatePassword = function (newPassword) {
         var _this = this;
         return new Promise(function (resolve, reject) {
             var _a;
             (_a = _this
                 .auth
-                .currentUser) === null || _a === void 0 ? void 0 : _a.updatePassword(password).then(function () {
+                .currentUser) === null || _a === void 0 ? void 0 : _a.updatePassword(newPassword).then(function () {
+                var _a;
+                resolve(((_a = _this.auth.currentUser) === null || _a === void 0 ? void 0 : _a.uid) || '');
+            }).catch(function (error) {
+                reject(_this.translateErrorMessage(error));
+            });
+        });
+    };
+    FirebaseAuthWrapper.prototype.updateEmail = function (newEmail) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var _a;
+            (_a = _this
+                .auth
+                .currentUser) === null || _a === void 0 ? void 0 : _a.updateEmail(newEmail).then(function () {
                 var _a;
                 resolve(((_a = _this.auth.currentUser) === null || _a === void 0 ? void 0 : _a.uid) || '');
             }).catch(function (error) {

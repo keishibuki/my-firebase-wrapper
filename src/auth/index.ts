@@ -96,11 +96,25 @@ export class FirebaseAuthWrapper {
     });
   }
 
-  updatePassword(password: string): Promise<string | FirebaseAuthError> {
+  updatePassword(newPassword: string): Promise<string | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this
         .auth
-        .currentUser?.updatePassword(password)
+        .currentUser?.updatePassword(newPassword)
+        .then(() => {
+          resolve(this.auth.currentUser?.uid || '');
+        })
+        .catch((error: FirebaseAuthError) => {
+          reject(this.translateErrorMessage(error));
+        });
+    }); 
+  }
+
+  updateEmail(newEmail: string): Promise<string | FirebaseAuthError> {
+    return new Promise((resolve, reject) => {
+      this
+        .auth
+        .currentUser?.updateEmail(newEmail)
         .then(() => {
           resolve(this.auth.currentUser?.uid || '');
         })
