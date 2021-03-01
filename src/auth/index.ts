@@ -58,7 +58,7 @@ export class FirebaseAuthWrapper {
     });
   }
 
-  reauthenticateWithCredential(currentPassword: string): Promise<string | undefined> {
+  reauthenticateWithCredential(currentPassword: string): Promise<string | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       const { currentUser } = this.auth;
 
@@ -73,7 +73,7 @@ export class FirebaseAuthWrapper {
         .then(() => resolve(currentUser.uid))
         .catch((error) => {
           console.error(error)
-          reject(undefined);
+          reject(error);
         });
     });
   }
