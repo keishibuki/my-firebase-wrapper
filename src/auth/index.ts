@@ -96,6 +96,20 @@ export class FirebaseAuthWrapper {
     });
   }
 
+  updatePassword(password: string): Promise<string | FirebaseAuthError> {
+    return new Promise((resolve, reject) => {
+      this
+        .auth
+        .currentUser?.updatePassword(password)
+        .then(() => {
+          resolve(this.auth.currentUser?.uid || '');
+        })
+        .catch((error: FirebaseAuthError) => {
+          reject(this.translateErrorMessage(error));
+        });
+    }); 
+  }
+
   onAuthStateChanged(): Promise<firebase.User | null> {
    return new Promise((resolve, reject) => {
       this.auth.onAuthStateChanged((user) => {
