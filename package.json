@@ -1,7 +1,7 @@
 {
   "name": "my-firebase-wrapper",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "devDependencies": {
     "@firebase/rules-unit-testing": "^1.2.2",
