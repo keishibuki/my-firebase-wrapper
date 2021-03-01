@@ -8,6 +8,7 @@ export class Collection<ObjectValue extends ObjectUid> {
   public db: firebase.firestore.Firestore;
   public collectionRef: firebase.firestore.CollectionReference;
   private converter: Converter<ObjectValue>;
+  private query: Query<ObjectValue>;
 
   constructor(
     db: firebase.firestore.Firestore,
@@ -18,6 +19,7 @@ export class Collection<ObjectValue extends ObjectUid> {
     this.db = db;
     this.collectionRef = db.collection(collectionPath);
     this.converter = new Converter<ObjectValue>({ encode, decode });
+    this.query = new Query({} as firebase.firestore.Query, this.converter);
   }
 
   doc(id?: string): firebase.firestore.DocumentReference {

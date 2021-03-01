@@ -217,8 +217,8 @@
         "affectsGlobalScope": false
       },
       "../src/firestore/collection.ts": {
-        "version": "63d215715893276eb932e97078371c504111fa85c8652868704084817671a9c6",
-        "signature": "b29881550802e4cc33e8aaac917d3ebad5779a6ada89fb3d3d10571bc84c8c70",
+        "version": "56ddd437c07f902ee5745ab13c26946d1a101eeb99eae274d6b07b072aac650e",
+        "signature": "2d9e111e5fbe916f2f4a9f11bf62c251cf554854db1ac74c2a9a5281c95efea3",
         "affectsGlobalScope": false
       },
       "../src/firestore/index.ts": {
@@ -1488,7 +1488,20 @@
       "../src/__test__/util.ts",
       "../src/auth/error/ja.json",
       "../src/auth/index.ts",
-      "../src/firestore/collection.ts",
+      [
+        "../src/firestore/collection.ts",
+        [
+          {
+            "file": "../src/firestore/collection.ts",
+            "start": 410,
+            "length": 5,
+            "messageText": "'query' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
       "../src/firestore/converter.ts",
       "../src/firestore/index.ts",
       "../src/firestore/query.ts",

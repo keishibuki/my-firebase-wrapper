@@ -5,6 +5,7 @@ export declare class Collection<ObjectValue extends ObjectUid> {
     db: firebase.firestore.Firestore;
     collectionRef: firebase.firestore.CollectionReference;
     private converter;
+    private query;
     constructor(db: firebase.firestore.Firestore, collectionPath: string, encode?: Encode<ObjectValue>, decode?: Decode<ObjectValue>);
     doc(id?: string): firebase.firestore.DocumentReference;
     fetch(id: string): Promise<ObjectValue | undefined>;

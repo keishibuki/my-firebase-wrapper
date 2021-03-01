@@ -44,6 +44,7 @@ var Collection = /** @class */ (function () {
         this.db = db;
         this.collectionRef = db.collection(collectionPath);
         this.converter = new converter_1.Converter({ encode: encode, decode: decode });
+        this.query = new query_1.Query({}, this.converter);
     }
     Collection.prototype.doc = function (id) {
         if (id)
