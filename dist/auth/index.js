@@ -69,7 +69,7 @@ var FirebaseAuthWrapper = /** @class */ (function () {
                 .then(function () { return resolve(currentUser.uid); })
                 .catch(function (error) {
                 console.error(error);
-                reject(error);
+                reject(_this.translateErrorMessage(error));
             });
         });
     };

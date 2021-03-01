@@ -73,7 +73,7 @@ export class FirebaseAuthWrapper {
         .then(() => resolve(currentUser.uid))
         .catch((error) => {
           console.error(error)
-          reject(error);
+          reject(this.translateErrorMessage(error));
         });
     });
   }
