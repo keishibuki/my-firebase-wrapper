@@ -167,8 +167,8 @@
         "affectsGlobalScope": true
       },
       "../src/auth/index.ts": {
-        "version": "0b55273f110e1deb74bc0765cb747336c567ad39f4226acd90c20a05af04c707",
-        "signature": "d2558ae96b46f37fe44a52e22a5dbfda474789d19e5bc6aee6f626ff58195f33",
+        "version": "4b73528c2971c4fb6ef7327c1840f18d0ad03e56dc7f0580c468b3600460bce5",
+        "signature": "09eb3518c2c13e6f8a42e725f8b5ae7451195abc9e601da5994772001cabbbaa",
         "affectsGlobalScope": false
       },
       "../node_modules/utility-types/dist/aliases-and-guards.d.ts": {

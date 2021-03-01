@@ -10,6 +10,9 @@ var FirebaseAuthWrapper = /** @class */ (function () {
     function FirebaseAuthWrapper(auth) {
         this.auth = auth;
     }
+    FirebaseAuthWrapper.prototype.getCurrentUser = function () {
+        return this.auth.currentUser;
+    };
     FirebaseAuthWrapper.prototype.signInWithEmailAndPassword = function (email, password) {
         var _this = this;
         return new Promise(function (resolve, reject) {

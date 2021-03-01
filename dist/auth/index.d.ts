@@ -3,6 +3,7 @@ export declare type FirebaseAuthError = firebase.auth.Error | firebase.auth.Auth
 export declare class FirebaseAuthWrapper {
     private auth;
     constructor(auth: firebase.auth.Auth);
+    getCurrentUser(): firebase.User | null;
     signInWithEmailAndPassword(email: string, password: string): Promise<firebase.auth.UserCredential | FirebaseAuthError>;
     signOut(): Promise<unknown>;
     sendPasswordResetEmail(email: string): Promise<string | FirebaseAuthError>;

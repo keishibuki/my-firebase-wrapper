@@ -11,6 +11,10 @@ export class FirebaseAuthWrapper {
     this.auth = auth;
   }
 
+  getCurrentUser(): firebase.User | null {
+    return this.auth.currentUser;
+  }
+
   signInWithEmailAndPassword(email: string, password: string): Promise<firebase.auth.UserCredential | FirebaseAuthError> {
     return new Promise((resolve, reject) => {
       this.auth
