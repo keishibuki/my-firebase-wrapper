@@ -6,7 +6,6 @@ import { Query } from "./query";
 
 export class Collection<ObjectValue extends ObjectUid> {
   public db: firebase.firestore.Firestore;
-  public query: Query<ObjectValue>;
   public collectionRef: firebase.firestore.CollectionReference;
   private converter: Converter<ObjectValue>;
 
@@ -19,7 +18,6 @@ export class Collection<ObjectValue extends ObjectUid> {
     this.db = db;
     this.collectionRef = db.collection(collectionPath);
     this.converter = new Converter<ObjectValue>({ encode, decode });
-    this.query = new Query({} as firebase.firestore.Query, this.converter);
   }
 
   doc(id?: string): firebase.firestore.DocumentReference {
@@ -28,7 +26,7 @@ export class Collection<ObjectValue extends ObjectUid> {
     return this.collectionRef.doc();
   }
 
-  async fetch(id: string): Promise<ObjectValue | undefined> {
+  async fetchByDocId(id: string): Promise<ObjectValue | undefined> {
     const docRef = this.doc(id);
     const snapshot = await docRef.get();
     if (!snapshot.exists) return undefined;

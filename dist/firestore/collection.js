@@ -44,14 +44,13 @@ var Collection = /** @class */ (function () {
         this.db = db;
         this.collectionRef = db.collection(collectionPath);
         this.converter = new converter_1.Converter({ encode: encode, decode: decode });
-        this.query = new query_1.Query({}, this.converter);
     }
     Collection.prototype.doc = function (id) {
         if (id)
             return this.collectionRef.doc(id);
         return this.collectionRef.doc();
     };
-    Collection.prototype.fetch = function (id) {
+    Collection.prototype.fetchByDocId = function (id) {
         return __awaiter(this, void 0, void 0, function () {
             var docRef, snapshot;
             return __generator(this, function (_a) {

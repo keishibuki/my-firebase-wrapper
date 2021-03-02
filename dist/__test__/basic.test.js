@@ -86,7 +86,7 @@ describe("Basic", function () {
             var doc;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, collection.fetch(existsDocId)];
+                    case 0: return [4 /*yield*/, collection.fetchByDocId(existsDocId)];
                     case 1:
                         doc = _a.sent();
                         expect(doc).toEqual(existsDoc);
@@ -98,7 +98,7 @@ describe("Basic", function () {
             var doc;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, collection.fetch("not_exists_document_id")];
+                    case 0: return [4 /*yield*/, collection.fetchByDocId("not_exists_document_id")];
                     case 1:
                         doc = _a.sent();
                         expect(doc).toEqual(undefined);
@@ -132,7 +132,7 @@ describe("Basic", function () {
                         return [4 /*yield*/, collection.add(doc)];
                     case 1:
                         addedId = _a.sent();
-                        return [4 /*yield*/, collection.fetch(addedId)];
+                        return [4 /*yield*/, collection.fetchByDocId(addedId)];
                     case 2:
                         fetchedDoc = _a.sent();
                         expect(fetchedDoc).toEqual({
@@ -162,7 +162,7 @@ describe("Basic", function () {
                         return [4 /*yield*/, collection.set(setDoc)];
                     case 2:
                         setedId = _a.sent();
-                        return [4 /*yield*/, collection.fetch(setedId)];
+                        return [4 /*yield*/, collection.fetchByDocId(setedId)];
                     case 3:
                         fetchedDoc = _a.sent();
                         expect(fetchedDoc).toEqual(setDoc);
@@ -188,7 +188,7 @@ describe("Basic", function () {
                         return [4 /*yield*/, collection.update(setDoc)];
                     case 2:
                         setedId = _a.sent();
-                        return [4 /*yield*/, collection.fetch(setedId)];
+                        return [4 /*yield*/, collection.fetchByDocId(setedId)];
                     case 3:
                         fetchedDoc = _a.sent();
                         expect(fetchedDoc).toEqual(setDoc);
@@ -212,7 +212,7 @@ describe("Basic", function () {
                     return [4 /*yield*/, collection.delete(addedId)];
                 case 2:
                     _a.sent();
-                    return [4 /*yield*/, collection.fetch(addedId)];
+                    return [4 /*yield*/, collection.fetchByDocId(addedId)];
                 case 3:
                     snapshot = _a.sent();
                     expect(snapshot).toBe(undefined);
@@ -227,7 +227,7 @@ describe("Basic", function () {
                 switch (_a.label) {
                     case 0:
                         docRef = collection.doc();
-                        return [4 /*yield*/, collection.fetch(docRef.id)];
+                        return [4 /*yield*/, collection.fetchByDocId(docRef.id)];
                     case 1:
                         fetchedDoc = _a.sent();
                         console.log(fetchedDoc);
@@ -242,7 +242,7 @@ describe("Basic", function () {
                 switch (_a.label) {
                     case 0:
                         docRef = collection.doc(existsDocId);
-                        return [4 /*yield*/, collection.fetch(docRef.id)];
+                        return [4 /*yield*/, collection.fetchByDocId(docRef.id)];
                     case 1:
                         fetchedDoc = _a.sent();
                         console.log(fetchedDoc);

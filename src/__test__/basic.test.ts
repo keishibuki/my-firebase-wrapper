@@ -41,11 +41,11 @@ describe("Basic", () => {
 
   describe("fetch", () => {
     it("exists document", async () => {
-      const doc = await collection.fetch(existsDocId);
+      const doc = await collection.fetchByDocId(existsDocId);
       expect(doc).toEqual(existsDoc);
     });
     it("does not exist document", async () => {
-      const doc = await collection.fetch("not_exists_document_id");
+      const doc = await collection.fetchByDocId("not_exists_document_id");
       expect(doc).toEqual(undefined);
     });
     it("fetchAll", async () => {
@@ -63,7 +63,7 @@ describe("Basic", () => {
 
       const addedId = await collection.add(doc);
 
-      const fetchedDoc = await collection.fetch(addedId);
+      const fetchedDoc = await collection.fetchByDocId(addedId);
       expect(fetchedDoc).toEqual({
         uid: addedId,
         name: doc.name,
@@ -85,7 +85,7 @@ describe("Basic", () => {
 
       const setedId = await collection.set(setDoc);
 
-      const fetchedDoc = await collection.fetch(setedId);
+      const fetchedDoc = await collection.fetchByDocId(setedId);
       expect(fetchedDoc).toEqual(setDoc);
     });
 
@@ -103,7 +103,7 @@ describe("Basic", () => {
 
       const setedId = await collection.update(setDoc);
 
-      const fetchedDoc = await collection.fetch(setedId);
+      const fetchedDoc = await collection.fetchByDocId(setedId);
       expect(fetchedDoc).toEqual(setDoc);
     });
   });
@@ -116,7 +116,7 @@ describe("Basic", () => {
     const addedId = await collection.add(doc);
 
     await collection.delete(addedId);
-    const snapshot = await collection.fetch(addedId);
+    const snapshot = await collection.fetchByDocId(addedId);
 
     expect(snapshot).toBe(undefined);
   });
@@ -124,14 +124,14 @@ describe("Basic", () => {
   describe("docRef", () => {
     it("引数なしの場合、新しいドキュメントを返す必要がある", async () => {
       const docRef = collection.doc();
-      const fetchedDoc = await collection.fetch(docRef.id);
+      const fetchedDoc = await collection.fetchByDocId(docRef.id);
       console.log(fetchedDoc);
       expect(fetchedDoc).toBeUndefined();
     });
 
     it("引数ありの場合、存在するドキュメントを返す必要がある", async () => {
       const docRef = collection.doc(existsDocId);
-      const fetchedDoc = await collection.fetch(docRef.id);
+      const fetchedDoc = await collection.fetchByDocId(docRef.id);
       console.log(fetchedDoc);
       expect(fetchedDoc).toEqual(existsDoc);
     });
