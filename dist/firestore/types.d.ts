@@ -8,7 +8,7 @@ export declare type QueryKey<ObjectValue extends ObjectUid> = {
     [K in keyof ObjectValue]: K;
 }[keyof ObjectValue] | firebase.firestore.FieldPath;
 export declare type Encode<ObjectValue extends ObjectUid> = (obj: AddableObject<ObjectValue>) => ObjectValue;
-export declare type Decode<ObjectValue extends ObjectUid> = (doc: firebase.firestore.DocumentSnapshot) => ObjectValue;
+export declare type Decode<ObjectValue extends ObjectUid> = (doc: firebase.firestore.DocumentSnapshot<ObjectValue>) => ObjectValue;
 export interface Where<ObjectValue extends ObjectUid> {
     fieldPath: QueryKey<ObjectValue>;
     opStr: firebase.firestore.WhereFilterOp;

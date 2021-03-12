@@ -17,7 +17,7 @@ export type Encode<ObjectValue extends ObjectUid> = (
 ) => ObjectValue;
 
 export type Decode<ObjectValue extends ObjectUid> = (
-  doc: firebase.firestore.DocumentSnapshot
+  doc: firebase.firestore.DocumentSnapshot<ObjectValue>
 ) => ObjectValue;
 
 export interface Where<ObjectValue extends ObjectUid> {

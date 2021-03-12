@@ -18,7 +18,7 @@ export class Converter<ObjectValue extends ObjectUid> {
     this._decode = decode;
   }
 
-  decode(documentSnapshot: firebase.firestore.DocumentSnapshot) {
+  decode(documentSnapshot: firebase.firestore.DocumentSnapshot<ObjectValue> | firebase.firestore.QueryDocumentSnapshot<ObjectValue>) {
     if (this._decode) return this._decode(documentSnapshot);
 
     const obj = { ...documentSnapshot.data() };

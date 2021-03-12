@@ -3,10 +3,10 @@ import { AddableObject, Decode, Encode, ObjectUid, QueryKey } from "./types";
 import { Query } from "./query";
 export declare class Collection<ObjectValue extends ObjectUid> {
     db: firebase.firestore.Firestore;
-    collectionRef: firebase.firestore.CollectionReference;
+    collectionRef: firebase.firestore.CollectionReference<ObjectValue>;
     private converter;
     constructor(db: firebase.firestore.Firestore, collectionPath: string, encode?: Encode<ObjectValue>, decode?: Decode<ObjectValue>);
-    doc(id?: string): firebase.firestore.DocumentReference;
+    doc(id?: string): firebase.firestore.DocumentReference<ObjectValue>;
     fetchByDocId(id: string): Promise<ObjectValue | undefined>;
     fetchAll(): Promise<ObjectValue[] | undefined>;
     add(obj: AddableObject<ObjectValue>): Promise<string>;
@@ -16,5 +16,5 @@ export declare class Collection<ObjectValue extends ObjectUid> {
     where(fieldPath: QueryKey<ObjectValue>, opStr: firebase.firestore.WhereFilterOp, value: any): Query<ObjectValue>;
     orderBy(fieldPath: QueryKey<ObjectValue>, directionStr?: firebase.firestore.OrderByDirection): Query<ObjectValue>;
     limit(limit: number): Query<ObjectValue>;
-    onSnapshot(callback: (querySnapshot: firebase.firestore.QuerySnapshot, decode: (documentSnapshot: firebase.firestore.DocumentSnapshot) => ObjectValue) => void): void;
+    onSnapshot(callback: (querySnapshot: firebase.firestore.QuerySnapshot, decode: (documentSnapshot: firebase.firestore.DocumentSnapshot<ObjectValue> | firebase.firestore.QueryDocumentSnapshot<ObjectValue>) => ObjectValue) => void): void;
 }

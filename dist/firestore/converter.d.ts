@@ -7,6 +7,6 @@ export declare class Converter<ObjectValue extends ObjectUid> {
         encode?: Encode<ObjectValue>;
         decode?: Decode<ObjectValue>;
     });
-    decode(documentSnapshot: firebase.firestore.DocumentSnapshot): ObjectValue;
+    decode(documentSnapshot: firebase.firestore.DocumentSnapshot<ObjectValue> | firebase.firestore.QueryDocumentSnapshot<ObjectValue>): ObjectValue;
     encode(obj: AddableObject<ObjectValue>): ObjectValue;
 }

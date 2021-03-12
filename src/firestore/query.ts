@@ -3,7 +3,7 @@ import { ObjectUid, QueryKey } from './types';
 import { Converter } from './converter';
 
 export class Query<ObjectValue extends ObjectUid> {
-  constructor(public query: firebase.firestore.Query, public converter: Converter<ObjectValue>) {
+  constructor(public query: firebase.firestore.Query<ObjectValue>, public converter: Converter<ObjectValue>) {
     this.query = query;
     this.converter = converter;
   }
@@ -35,7 +35,7 @@ export class Query<ObjectValue extends ObjectUid> {
   onSnapshot(
     callback: (
       querySnapshot: firebase.firestore.QuerySnapshot,
-      decode: (documentSnapshot: firebase.firestore.DocumentSnapshot) => ObjectValue,
+      decode: (documentSnapshot: firebase.firestore.DocumentSnapshot<ObjectValue> | firebase.firestore.QueryDocumentSnapshot<ObjectValue>) => ObjectValue,
     ) => void,
   ) {
     this.query.onSnapshot((querySnapshot) => {
