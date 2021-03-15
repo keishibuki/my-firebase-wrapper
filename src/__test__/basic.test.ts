@@ -14,6 +14,7 @@ const projectId = util.projectId;
 const db = util.db;
 const firestoreWrapper = new FirestoreWrapper(db);
 
+
 /**  * @jest-environment node  */
 describe("Basic", () => {
   const testCollectionPath = "test-collection";
@@ -21,6 +22,9 @@ describe("Basic", () => {
   const existsDoc = { uid: existsDocId, name: "test", num: 10 };
   const collection = firestoreWrapper.collection<TestDoc>({
     collectionPath: testCollectionPath,
+    encode: (obj) => {
+      return { ...obj, uid: obj.uid || '' };
+    },
   });
 
   beforeEach(async () => {

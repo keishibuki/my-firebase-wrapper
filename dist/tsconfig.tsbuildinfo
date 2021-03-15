@@ -227,7 +227,7 @@
         "affectsGlobalScope": false
       },
       "../src/index.tsx": {
-        "version": "151b305db53b6f2819e9205bfd852865a9fcdf6062307458f7d74bdb8d208a07",
+        "version": "bee7e77dbab4c6c5d3c05e602cc25dcfffc2d884c13541a37ad5e0d2694b5959",
         "signature": "bee7e77dbab4c6c5d3c05e602cc25dcfffc2d884c13541a37ad5e0d2694b5959",
         "affectsGlobalScope": false
       },
@@ -247,7 +247,7 @@
         "affectsGlobalScope": false
       },
       "../src/__test__/basic.test.ts": {
-        "version": "df8717893ae3b0354007f6b60a11e93155a9e31482a2bd2642ec3916d1bc4832",
+        "version": "8b340912042eb68dadc0e46594bbfdd066521416899837d54ddd1142134543fe",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -640,6 +640,7 @@
       "sourceMap": true,
       "outDir": "./",
       "strict": true,
+      "noImplicitAny": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
