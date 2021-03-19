@@ -22,9 +22,6 @@ describe("Basic", () => {
   const existsDoc = { uid: existsDocId, name: "test", num: 10 };
   const collection = firestoreWrapper.collection<TestDoc>({
     collectionPath: testCollectionPath,
-    encode: (obj) => {
-      return { ...obj, uid: obj.uid || '' };
-    },
   });
 
   beforeEach(async () => {

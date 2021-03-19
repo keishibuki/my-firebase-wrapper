@@ -212,7 +212,7 @@
         "affectsGlobalScope": false
       },
       "../src/firestore/query.ts": {
-        "version": "af7efbb78bcdad8ff236f07b54a8640b4219c0514c33e006e27a4f7a927cca85",
+        "version": "8b63246c4f60baa9c168addaec362c24eaa2490d9f1f329530539f00481447c2",
         "signature": "4c779ff7eb38d06f0b8dbb8697c889578998875fe17ec5ca001fd3b5c3dff05c",
         "affectsGlobalScope": false
       },
@@ -247,7 +247,7 @@
         "affectsGlobalScope": false
       },
       "../src/__test__/basic.test.ts": {
-        "version": "8b340912042eb68dadc0e46594bbfdd066521416899837d54ddd1142134543fe",
+        "version": "37c9f08d1af8f69ac7b808ae0d4b716c0427b91b0d5a5a1354e7e5273aa58114",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },

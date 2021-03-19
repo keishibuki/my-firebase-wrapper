@@ -58,14 +58,21 @@ var Query = /** @class */ (function () {
     };
     Query.prototype.fetch = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var snapshot;
+            var snapshot, error_1;
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.query.get()];
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.query.get()];
                     case 1:
                         snapshot = _a.sent();
                         return [2 /*return*/, snapshot.docs.map(function (documentSnapshot) { return _this.converter.decode(documentSnapshot); })];
+                    case 2:
+                        error_1 = _a.sent();
+                        console.error(error_1);
+                        return [2 /*return*/, error_1];
+                    case 3: return [2 /*return*/];
                 }
             });
         });

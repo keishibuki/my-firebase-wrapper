@@ -27,9 +27,15 @@ export class Query<ObjectValue extends ObjectUid> {
   }
 
   async fetch(): Promise<ObjectValue[]> {
+    try {
     const snapshot = await this.query.get();
 
     return snapshot.docs.map((documentSnapshot) => this.converter.decode(documentSnapshot));
+    } catch (error) {
+      console.error(error);
+
+      return error;
+    }
   }
 
   onSnapshot(
