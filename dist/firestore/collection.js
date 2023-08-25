@@ -98,7 +98,7 @@ var Collection = /** @class */ (function () {
             });
         });
     };
-    Collection.prototype.set = function (obj) {
+    Collection.prototype.set = function (obj, merge) {
         return __awaiter(this, void 0, void 0, function () {
             var doc, docRef;
             return __generator(this, function (_a) {
@@ -106,7 +106,7 @@ var Collection = /** @class */ (function () {
                     case 0:
                         doc = this.converter.encode(obj);
                         docRef = this.doc(obj.uid);
-                        return [4 /*yield*/, docRef.set(doc)];
+                        return [4 /*yield*/, docRef.set(doc, { merge: !!merge })];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, doc.uid];

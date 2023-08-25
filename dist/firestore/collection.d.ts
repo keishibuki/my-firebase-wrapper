@@ -10,7 +10,7 @@ export declare class Collection<ObjectValue extends ObjectUid> {
     fetchByDocId(id: string): Promise<ObjectValue | undefined>;
     fetchAll(): Promise<ObjectValue[] | undefined>;
     add(obj: AddableObject<ObjectValue>): Promise<string>;
-    set(obj: AddableObject<ObjectValue> | ObjectValue): Promise<string>;
+    set(obj: AddableObject<ObjectValue> | ObjectValue, merge?: boolean): Promise<string>;
     update(obj: ObjectValue): Promise<string>;
     delete(uid: string): Promise<string>;
     where(fieldPath: QueryKey<ObjectValue>, opStr: firebase.firestore.WhereFilterOp, value: any): Query<ObjectValue>;
