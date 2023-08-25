@@ -49,10 +49,10 @@ export class Collection<ObjectValue extends ObjectUid> {
     return doc.uid;
   }
 
-  async set(obj: AddableObject<ObjectValue> | ObjectValue) {
+  async set(obj: AddableObject<ObjectValue> | ObjectValue, merge?: boolean ) {
     const doc = this.converter.encode(obj);
     const docRef = this.doc(obj.uid);
-    await docRef.set(doc);
+    await docRef.set(doc, { merge: !!merge });
 
     return doc.uid;
   }
